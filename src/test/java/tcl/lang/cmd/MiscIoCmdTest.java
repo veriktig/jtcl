@@ -21,21 +21,13 @@ import java.util.LinkedList;
 
 import com.veriktig.scandium.internal.test.TclCmdTest;
 
-public class ApplyCmdTest extends TclCmdTest {
-	public void testCmd() throws Exception {
+public class MiscIoCmdTest extends TclCmdTest {
+	public void testIo() throws Exception {
 		LinkedList<String> expectedFailureList = new LinkedList<String>(Arrays.asList( new String[] {
-                /*
-				// fails because of error message differences:
-	            //"apply-4.3", "apply-4.4", "apply-4.5", "apply-5.1",
-	            "apply-4.4", "apply-4.5", "apply-5.1",
-	            // returns the correct values, but non in the same order as C Tcl
-	            //"apply-8.2", "apply-8.3", "apply-8.4", "apply-8.5", "apply-8.6", "apply-8.7", 
-	            "apply-8.2", "apply-8.3",
-	            //"apply-8.8", "apply-8.9", "apply-8.10"
-	            "apply-8.9", "apply-8.10"
-                */
-	        }));
-		String resName = "/tcl/lang/cmd/apply.test";
-		tclTestResource(resName, expectedFailureList);
+				//  previously failing test now seems to be working in Java 1.6.0_31
+				//  "io-14.9" // test requires that we can exec a new tcltest environment
+			}));
+		String resName = "/tcl/lang/cmd/io.test";
+		tclTestResource(TCLTEST_NAMEOFEXECUTABLE, resName, expectedFailureList);
 	}
 }

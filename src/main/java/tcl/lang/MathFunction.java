@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-package tcl.lang.cmd;
+package tcl.lang;
 
-import java.util.Collections;
+/**
+ * 
+ */
+public abstract class MathFunction {
+	static final int INT = 0;
+	static final int DOUBLE = 1;
+	static final int EITHER = 2;
 
-import com.veriktig.scandium.internal.test.TclCmdTest;
+	int[] argTypes;
 
-public class SubstCmdTest extends TclCmdTest {
-	public void testCmd() throws Exception {
-		String resName = "/tcl/lang/cmd/subst.test";
-		tclTestResource(TCLTEST_NAMEOFEXECUTABLE,  resName, Collections.emptyList());
-	}
+	abstract void apply(Interp interp, ExprValue[] values) throws TclException;
 }

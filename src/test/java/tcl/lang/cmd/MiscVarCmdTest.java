@@ -16,13 +16,11 @@
 
 package tcl.lang.cmd;
 
-import java.util.Collections;
-
 import com.veriktig.scandium.internal.test.TclCmdTest;
 
-public class SubstCmdTest extends TclCmdTest {
-	public void testCmd() throws Exception {
-		String resName = "/tcl/lang/cmd/subst.test";
-		tclTestResource(TCLTEST_NAMEOFEXECUTABLE,  resName, Collections.emptyList());
+public class MiscVarCmdTest extends TclCmdTest {
+	public void testVar() throws Exception {
+		String resName = "/tcl/lang/cmd/var.test";
+		tclTestResource(resName);
 	}
 }

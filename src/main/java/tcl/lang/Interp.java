@@ -62,17 +62,17 @@ public class Interp extends EventuallyFreed {
 	 * Translates Object to ReflectObject. This makes sure we have only one ReflectObject internalRep for the same
 	 * Object -- this way Object identity can be done by string comparison.
 	 */
-//	public HashMap reflectObjTable = new HashMap();
+	public HashMap reflectObjTable = new HashMap();
 
 	/**
 	 * Number of reflect objects created so far inside this Interp (including those that have be freed)
 	 */
-//	public long reflectObjCount = 0;
+	public long reflectObjCount = 0;
 
 	/**
 	 * Table used to store reflect hash index conflicts, see ReflectObject implementation for more details
 	 */
-//	public HashMap reflectConflictTable = new HashMap();
+	public HashMap reflectConflictTable = new HashMap();
 
 	/**
 	 * The number of chars to copy from an offending command into error message.
@@ -82,7 +82,7 @@ public class Interp extends EventuallyFreed {
 	/**
 	 * We pretend this is Tcl 8.4
 	 */
-	static final String TCL_VERSION = "8.4";
+	public static final String TCL_VERSION = "8.4";
 	/**
 	 * We pretend this is Tcl 8.4, patch level 0.
 	 */
@@ -373,9 +373,7 @@ public class Interp extends EventuallyFreed {
 	int parserTokensUsed;
 
 	/** Used ONLY by JavaImportCmd: classTable, packageTable, wildcardTable */
-	/*
 	public HashMap[] importTable = { new HashMap(), new HashMap(), new HashMap() };
-	*/
 	/**
 	 * Used by callers of Util.strtoul(), also used in FormatCmd.strtoul(). There is typically only one instance of a
 	 * StrtoulResult around at any one time. Callers should exercise care to use the results before any other code could

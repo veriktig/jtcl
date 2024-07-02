@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tcl.lang.TclCmdTest;
+import com.veriktig.scandium.internal.test.TclCmdTest;
 
 public class MiscCmdTest extends TclCmdTest {
 	public void testBasic() throws Exception {
